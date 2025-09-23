@@ -1,5 +1,7 @@
 # Chatbot de Notícias G1 com RAG e Llama
 
+Deploy: https://chatbot-g1-llama.streamlit.app/
+
 ## Problema a ser solucionado
 
 Na realidade atual em que temos milhares de notícias todos os dias, se torna difícil acompanhar as notícias que realmente nos interessam. Pensando nisso, idealizamos o Chatbot de notícias do G1, que **automatiza a coleta de notícias do G1**, gera **embeddings semânticos das notícias** e cria um **chatbot inteligente** capaz de:
