@@ -13,6 +13,10 @@ Em resumo, o projeto resolve o problema de **filtrar, organizar e consultar not�
 
 Este projeto cria um **chatbot de notícias do G1** utilizando **RAG (Retrieval-Augmented Generation)** com embeddings, **Pinecone** para armazenamento vetorial e **Llama** da Groq (llama-3.3-70b-versatile) como modelo de linguagem. O **Streamlit** é usado para a interface web interativa.
 
+![Demonstração 1 Chatbot](images/1_politica.png)
+![Demonstração 2 Chatbot](images/1_eua.png)
+
+
 ## Autores: 
 - Gabriel Cardoso;
 - Gisele Oliveira;
