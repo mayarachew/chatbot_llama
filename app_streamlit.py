@@ -1,9 +1,7 @@
 import streamlit as st
 import openai
 from pinecone import Pinecone
-from sentence_transformers import SentenceTransformer
 import json
-import numpy as np
 
 # -------------------------
 # CONFIGURAÇÃO GROQ E PINECONE
