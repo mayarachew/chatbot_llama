@@ -39,7 +39,7 @@ Este projeto cria um **chatbot de notícias do G1** utilizando **RAG (Retrieval-
 ## 🔹 Limitações atuais
 
 - **Streamlit versão gratuita**: o aplicativo Streamlit pode demandar um carregamento inicial caso esteja há um tempo inativo.
-- **Groq versão gratuita**: existe uma limitação nesse plano, então apenas os primeiros 100 caracteres do corpo da notícia são considerados.
+- **Groq versão gratuita**: existe uma limitação nesse plano, então apenas os primeiros 100 caracteres do corpo da notícia são considerados; para o RAG, apenas as 5 notícias mais similares com a pergunta são utilizadas.
 - **Pinecone versão gratuita**
 - **Crawler não automatizado**: o chatbot possui dados de notícias do G1 por RAG apenas do dia 24/09.
 
