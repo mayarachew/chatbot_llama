@@ -17,6 +17,7 @@ Este projeto cria um **chatbot de notícias do G1** utilizando **RAG (Retrieval-
 
 ![Demonstração 1 Chatbot](images/1_politica.png)
 
+
 ![Demonstração 2 Chatbot](images/2_eua.png)
 
 
