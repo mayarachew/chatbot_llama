@@ -80,7 +80,7 @@ def buscar_noticias(pergunta, k=10):
 # -----------------------------
 
 st.sidebar.title("Fique por dentro das principais notícias do G1 de hoje")
-st.sidebar.markdown("A base de dados utilizada contém notícias de 23/09/2025 extraídas por Crawler do G1, envolvendo manchetes principais, tecnologia e economia.")
+st.sidebar.markdown("A base de dados utilizada contém notícias de que aparecem na página principal no dia 24/09/2025 extraídas por Crawler do G1, envolvendo manchetes principais, tecnologia e economia.")
 
 st.sidebar.markdown("---")
 st.sidebar.info("🔹 Projeto de Notícias G1 com RAG e Llama")
