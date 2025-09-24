@@ -26,11 +26,10 @@ def pegar_links(url):
     driver.get(url)
     time.sleep(2)  # espera o JS carregar
 
-    # tenta múltiplos seletores
     seletores = [
-        "a.feed-post-link",                   # antigo
-        "a.feed-post-body-title",             # novo
-        "a.feed-post-link > h2"               # manchetes dentro de h2
+        "a.feed-post-link",
+        "a.feed-post-body-title",
+        "a.feed-post-link > h2"
     ]
 
     hrefs = set()
@@ -50,9 +49,10 @@ def pegar_links(url):
 # URLs das seções que deseja rastrear
 # -----------------------------
 secoes = [
-    "https://g1.globo.com/",                   # principal
-    "https://g1.globo.com/economia/",          # economia
-    "https://g1.globo.com/tecnologia/",        # tecnologia
+    "https://g1.globo.com/",
+    "https://g1.globo.com/economia/",
+    "https://g1.globo.com/tecnologia/",
+    "https://g1.globo.com/politica/",
 ]
 
 # -----------------------------
@@ -75,21 +75,23 @@ for idx, href in enumerate(hrefs, start=1):
     try:
         print(f"\n🔗 ({idx}) {href}")
         driver.get(href)
-        time.sleep(5)
 
-        # Título
+        # Espera título
         titulo_el = wait.until(EC.presence_of_element_located((By.TAG_NAME, "h1")))
         titulo = titulo_el.text.strip()
 
-        # Corpo completo da notícia
-        paragrafos = driver.find_elements(By.CSS_SELECTOR, "div.mc-body p")
-        corpo = " ".join([p.text for p in paragrafos]).strip()
+        # Coleta corpo
+        paragrafos = driver.find_elements(By.CSS_SELECTOR, "div.mc-article-body p")
+        corpo = " ".join([p.text for p in paragrafos if p.text.strip()])
+
+        if not corpo:
+            print(f"⚠️ Corpo não encontrado em {href}")
 
         resultados.append({
-            "_id": str(idx),      # id crescente em string
+            "_id": str(idx),
             "chunk_text": titulo,
             "link": href,
-            "texto_completo": corpo       # texto completo
+            "texto_completo": corpo
         })
 
     except Exception as e:

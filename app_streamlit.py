@@ -69,6 +69,7 @@ def buscar_noticias(pergunta, k=10):
     for hit in results['result']['hits']:
         docs.append({
             "texto": hit['fields']['chunk_text'],
+            "texto_completo": hit['fields']['texto_completo'],
             "link": hit['fields']['link']
         })
 
@@ -96,8 +97,8 @@ if st.button("Perguntar") and pergunta.strip():
     with st.spinner("🔄 Buscando notícias e gerando resposta..."):
         try:
             # Busca notícias mais relevantes
-            noticias_relevantes = buscar_noticias(pergunta, k=10)
-            contexto_texto = "\n\n".join([f"{n['texto']} (Link: {n['link']})" for n in noticias_relevantes])
+            noticias_relevantes = buscar_noticias(pergunta, k=5)
+            contexto_texto = "\n\n".join([f"Titulo: {n['texto']} | (Link: {n['link']}) | Texto completo: {n['texto_completo'][:100]}" for n in noticias_relevantes])
 
             # Pergunta ao modelo usando contexto
             resposta = openai.ChatCompletion.create(
